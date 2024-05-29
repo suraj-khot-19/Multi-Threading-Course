@@ -1,0 +1,55 @@
+### Thread Class vs Runnable Interface in Java
+
+
+In Java, both the Thread class and the Runnable interface are used to implement multithreading. They enable you to create and manage threads, but they differ in their approach and use cases. Here's a detailed comparison between the two:
+
+1. Extending the Thread Class
+Definition: The Thread class is a direct representation of a thread in Java. It provides methods and properties for thread management, including starting and controlling thread execution.
+
+How to use: To use the Thread class, you need to create a subclass of Thread and override the run() method, which contains the code to be executed by the thread.
+
+Pros:
+
+Directly provides thread management methods such as start(), sleep(), join(), etc.
+Simpler to use when you only need to work with a single thread.
+
+Cons:
+
+Inheritance limitation: Java does not support multiple inheritance, so if you extend the Thread class, you cannot extend another class. This limits flexibility when you want to inherit from other classes.
+Less flexible: It doesn't allow the use of pre-existing classes, as you are tying your task to the Thread class.
+
+
+
+2. Implementing the Runnable Interface
+Definition: The Runnable interface represents a task that can be executed by a thread. It has a single method, run(), which defines the code to be executed by the thread. A class that implements Runnable can be passed to a Thread object to execute the task.
+
+How to use: To use the Runnable interface, you need to create a class that implements Runnable and override the run() method. Then, you can pass the Runnable instance to a Thread object, which will execute it.
+
+Pros:
+
+More flexible: You can implement multiple interfaces or inherit from other classes, as you're not tied to extending the Thread class.
+Separation of concerns: The Runnable interface separates the task logic (run()) from the thread management, allowing more flexibility in how the task is executed.
+Better for thread pools: Runnable is often used with the ExecutorService framework to manage a pool of threads.
+
+
+Cons:
+
+You need to create a separate Thread object to actually start the thread (Thread t = new Thread(runnableReference)).
+
+
+### When to Use Each
+Use Thread class when:
+
+You need to create a simple thread and manage its execution directly.
+You don't need to extend any other class, as Thread will consume the only inheritance capability.
+
+
+Use Runnable interface when:
+
+You want to separate the task (logic) from the thread management (separation of concerns).
+You need to implement multiple interfaces or extend another class (since Java supports single inheritance).
+You need to work with thread pools (ExecutorService) for better management of multiple threads.
+
+
+### Conclusion
+Both the Thread class and the Runnable interface provide a way to create threads in Java, but they differ in flexibility and use cases. The Thread class is simpler to use when you are only dealing with basic thread management, whereas Runnable is more flexible and widely used in modern Java programming, especially in applications that involve concurrency frameworks and thread pools.
