@@ -1,0 +1,18 @@
+### Thread Lifecycle Flow
+
+1. New State: A thread is created, but it hasn't been started yet.
+
+
+2. Runnable State: The start() method is invoked. The thread is eligible to run but will be executed only when the thread scheduler assigns it CPU time.
+
+
+3. Blocked State: If the thread is waiting for a resource (like a lock), it enters the blocked state.
+
+
+4. Waiting State: A thread is waiting for another thread to perform some actions (for example, it may call join() or wait()).
+
+
+5. Timed Waiting State: The thread is waiting for a specified time period before resuming execution.
+
+
+6. Terminated State: Once the thread finishes executing its run() method or is interrupted, it enters the terminated state.
