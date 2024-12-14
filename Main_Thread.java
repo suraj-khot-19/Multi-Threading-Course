@@ -1,7 +1,7 @@
 public class Main_Thread {
 
     /// so by default main thread will run when main method runs in our application
-    ///
+
     public static void main(String[] args) {
         System.out.println("Hello World");
 
