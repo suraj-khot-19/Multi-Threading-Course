@@ -9,7 +9,7 @@ class Simple extends Thread{
     }
 }
 
-public class MultiThreading_Concept_Simple_EX {
+public class CWS_02_MultiThreading_Concept_Simple_EX {
     public static void main(String[] args) {
 
         Simple simple=new Simple();
